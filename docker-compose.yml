@@ -1,0 +1,13 @@
+version: '3.2'
+
+services:
+  main:
+    image: example_repo_main:latest
+    build:
+      dockerfile: Dockerfile
+      context: .
+      args:
+        GITHUB_TOKEN: ${GITHUB_TOKEN}
+    container_name: example_repo
+    ports:
+      - 8889:8889
